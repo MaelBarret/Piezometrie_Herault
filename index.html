@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 	<script src="https://code.highcharts.com/stock/highstock.js"></script>
-	<?PHP
-        echo shell_exec("SGI.py");
-        ?>
-		<style>html, body {
+    <style>html, body {
         height: 100%;
     }
     #map 
@@ -31,13 +28,14 @@
 </head>
 <!-- <header><a href="https://app.viginappe.brgm-rec.fr/">Lien de référence (visuel)</a></header> -->
     <body>
-      <div id="map"></div>
-    </body>
-    <script type="text/javascript"  src="main.js"></script>
-
+      <div id="map"></div>    
     <?PHP
     echo shell_exec("python script.py");
     ?>
+    </body>
+    <script type="text/javascript"  src="main.js"></script>
+
+
 
 </body>
 </html>

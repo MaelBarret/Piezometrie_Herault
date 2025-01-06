@@ -599,5 +599,4 @@ function carte_commun() {
 			// traitement_station();
 		}	
 	}
-	
 }

@@ -4,6 +4,8 @@ import pandas as pd
 
 import pastas as ps
 
+print("test")
+
 ps.set_log_level("ERROR")
 ps.show_versions()
 

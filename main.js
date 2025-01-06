@@ -3,7 +3,7 @@ const map = new L.map('map').setView([43.58,3.367], 10);
 
 var basemaps = {
 	OSM : L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png"),
-	OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
+	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 
 L.control.layers(basemaps).addTo(map);

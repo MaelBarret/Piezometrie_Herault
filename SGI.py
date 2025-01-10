@@ -4,7 +4,10 @@ import pandas as pd
 
 import pastas as ps
 
-print("test")
+from browser import document
+
+document <= "Bonjour !"
+
 
 ps.set_log_level("ERROR")
 ps.show_versions()

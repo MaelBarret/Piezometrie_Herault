@@ -15,33 +15,33 @@ dm =  document.getElementById('map');
 let markersLayer;
 let popup;
 // *** variables globales ***
-	slong = 'longitude';
-	slat = 'latitude';
-	scode = 'code_bss';
-	slib = 'nompe';
-	smeau = 'lisa'; // on va écrire l'entité bdlisa à la place de la masse d'eau
-	snbmes = 'nbmes'; // nom du champ dans le fichier station pour le nb de données/mesures/analyses. Peut ne pas exister ('')
-	sdatefin = 'datefin';   // nom du champ dans le fichier station pour la date de fin. Permet de n'afficher que les stations qui dont des données postérieures à date passé en paramètre. Peut ne pas exister ('')
-	sdatedeb = 'datedeb';   // nom du champ dans le fichier station pour la date de fin. Permet de n'afficher que les stations qui dont des données postérieures à date passé en paramètre. Peut ne pas exister ('')
-	snat = 'natpe'; // nom du champ dans le fichier station pour la nature (permet de discriminer l'affichage des stations par couleur ou présence/absence). Peut ne pas exister ('')
-	sparam = ''; 
-	sres = 'profmax'; // nom du champ dans le fichier station pour le résultat max (permet de discriminer l'affichage des stations par seuil de résultat). Peut ne pas exister ('')
-	sunit = ''; // nom du champ unité dans la réponse hubeau
-	iconfile = 'pointOr_on.png'; // l'image 'iconPiezo.svg' met trop de temps à charger quand beaucoup d'éléments et nécessiterait clustering
-	iconscale = 15;
-	icony = 0; // 32
-	fdp = 'esri_topo3';
-	fp1 = true; fp2 = true; fp3 = true; fp4 = false; fp5 = true; fp6 = true; fp7 = true;
-	size = 40000; // 2022-08-02 changé de 20000 à 40000 car une station a 20304 mesures. Nécessité de changer le traitement dans donnees_piezo
-	// tableaux pour rangeSelector de la fonction graphique()
-	ty = ['month', 'year', 'year', 'year'];
-	co = [3, 1, 5, 10];
-	te = ['3 mois', '1 an', '5 ans', '10 ans'];
-	down_img_top = 278+30-75; // position de arrowdown pour gérer affichage graphique +30 pour possibilité station+nappe sur 3 lignes -75 suppression Contact
-	ajout = 100000; // pour afficher 5 chiffres dans odometer dont 1 décimale
-	station_layer_name_URL = 'https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/stations?code_departement=34&format=json'; // nom du fichier des stations
-	station_layer_type = 'json'; // json ou geojson
-	setat = "points d'eau"; // 2021-08-26 phrase qui doit apparaître dans la ligne d'état
+	// slong = 'longitude';
+	// slat = 'latitude';
+	// scode = 'code_bss';
+	// slib = 'nompe';
+	// smeau = 'lisa'; // on va écrire l'entité bdlisa à la place de la masse d'eau
+	// snbmes = 'nbmes'; // nom du champ dans le fichier station pour le nb de données/mesures/analyses. Peut ne pas exister ('')
+	// sdatefin = 'datefin';   // nom du champ dans le fichier station pour la date de fin. Permet de n'afficher que les stations qui dont des données postérieures à date passé en paramètre. Peut ne pas exister ('')
+	// sdatedeb = 'datedeb';   // nom du champ dans le fichier station pour la date de fin. Permet de n'afficher que les stations qui dont des données postérieures à date passé en paramètre. Peut ne pas exister ('')
+	// snat = 'natpe'; // nom du champ dans le fichier station pour la nature (permet de discriminer l'affichage des stations par couleur ou présence/absence). Peut ne pas exister ('')
+	// sparam = ''; 
+	// sres = 'profmax'; // nom du champ dans le fichier station pour le résultat max (permet de discriminer l'affichage des stations par seuil de résultat). Peut ne pas exister ('')
+	// sunit = ''; // nom du champ unité dans la réponse hubeau
+	// iconfile = 'pointOr_on.png'; // l'image 'iconPiezo.svg' met trop de temps à charger quand beaucoup d'éléments et nécessiterait clustering
+	// iconscale = 15;
+	// icony = 0; // 32
+	// fdp = 'esri_topo3';
+	// fp1 = true; fp2 = true; fp3 = true; fp4 = false; fp5 = true; fp6 = true; fp7 = true;
+	// size = 40000; // 2022-08-02 changé de 20000 à 40000 car une station a 20304 mesures. Nécessité de changer le traitement dans donnees_piezo
+	// // tableaux pour rangeSelector de la fonction graphique()
+	// ty = ['month', 'year', 'year', 'year'];
+	// co = [3, 1, 5, 10];
+	// te = ['3 mois', '1 an', '5 ans', '10 ans'];
+	// down_img_top = 278+30-75; // position de arrowdown pour gérer affichage graphique +30 pour possibilité station+nappe sur 3 lignes -75 suppression Contact
+	// ajout = 100000; // pour afficher 5 chiffres dans odometer dont 1 décimale
+	// station_layer_name_URL = 'https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/stations?code_departement=34&format=json'; // nom du fichier des stations
+	// station_layer_type = 'json'; // json ou geojson
+	// setat = "points d'eau"; // 2021-08-26 phrase qui doit apparaître dans la ligne d'état
 // **************************
 
 grandeur = "piezo"; // pour éviter erreur dans les tooltips

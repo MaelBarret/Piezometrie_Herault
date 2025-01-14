@@ -9,6 +9,7 @@ var basemaps = {
 
 L.control({position:'topleft'}).layers(basemaps).addTo(map);
 basemaps.CartoDB.addTo(map);
+
 (function() {
 	var control = new L.Control({position:'topleft'});
 	control.onAdd = function(map) {
@@ -22,8 +23,7 @@ basemaps.CartoDB.addTo(map);
 		return azoom;
 	  };
 	return control;
-  }())
-  .addTo(map);
+  }()).addTo(map);
   
 // Add layer to the map
 dm =  document.getElementById('map'); 

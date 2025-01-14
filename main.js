@@ -7,7 +7,7 @@ var basemaps = {
 	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 
-L.control().layers(basemaps).addTo(map);
+L.control.layers(basemaps).addTo(map);
 basemaps.CartoDB.addTo(map);
   
 // Add layer to the map

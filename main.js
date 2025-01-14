@@ -2,7 +2,8 @@
 const map = new L.map('map').setView([43.58,3.367], 10);
 
 var basemaps = {
-	OSM : L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png"),
+	CartoDB : L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"),
+	OSM : L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png"),	
 	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 

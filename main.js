@@ -2,13 +2,12 @@
 const map = new L.map('map').setView([43.58,3.367], 10);
 
 var basemaps = {
-	CartoDB : L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',}),
-	OSM : L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png"),	
+	CartoDB : L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',}),
+	OSM : L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),	
 	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 
-L.control.layers(basemaps).addTo(map);
+L.control.layers(basemaps,{position : 'topleft'}).addTo(map);
 basemaps.CartoDB.addTo(map);
 // Add layer to the map
 dm =  document.getElementById('map'); 

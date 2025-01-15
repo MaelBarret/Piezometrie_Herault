@@ -7,9 +7,15 @@ var basemaps = {
 	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 
-// var layerControl = L.control({position:'topleft'}).layers(basemaps).addTo(map);
-// layerControl.addBaseLayer(CartoDB, "CartoDB");
+var layerControl = L.control.layers(basemaps, null, {position: 'topleft'}).addTo(map);
 basemaps.CartoDB.addTo(map);
+
+L.control.resetView({
+	position: "topleft",
+	title: "Reset view",
+	latlng: L.latLng([51.505, -0.09]),
+	zoom: 13,
+}).addTo(map);
 
 // Add layer to the map
 dm =  document.getElementById('map'); 

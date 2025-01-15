@@ -4,18 +4,24 @@ const map = new L.map('map').setView([43.58,3.367], 10);
 var basemaps = {
 	CartoDB : L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',}),
 	OSM : L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}),	
+	// 'Lithologie simplifiée' : L.tileLayer.wms('http://geoservices.brgm.fr/geologie', {layers: 'LITHO_1M_SIMPLIFIEE', format: 'image/png', transparent: true, opacity: 0.25}),
 	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 
-var layerControl = L.control.layers(basemaps, null, {position: 'topleft'}).addTo(map);
-basemaps.CartoDB.addTo(map);
+var overlay = {
+	'Lithologie simplifiée' : L.tileLayer.wms('http://geoservices.brgm.fr/geologie', {layers: 'LITHO_1M_SIMPLIFIEE', format: 'image/png', transparent: true, opacity: 0.25}),
+	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
+};
 
 L.control.resetView({
 	position: "topleft",
-	title: "Reset view",
-	latlng: L.latLng([51.505, -0.09]),
-	zoom: 13,
+	title: "Réinitialiser",
+	latlng: L.latLng([43.58,3.367]),
+	zoom: 10,
 }).addTo(map);
+
+var layerControl = L.control.layers(basemaps, overlay, {position: 'topleft'}).addTo(map);
+basemaps.CartoDB.addTo(map);
 
 // Add layer to the map
 dm =  document.getElementById('map'); 

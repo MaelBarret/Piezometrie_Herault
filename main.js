@@ -10,7 +10,6 @@ var basemaps = {
 
 var overlay = {
 	'Lithologie simplifiée' : L.tileLayer.wms('http://geoservices.brgm.fr/geologie', {layers: 'LITHO_1M_SIMPLIFIEE', format: 'image/png', transparent: true, opacity: 0.25}),
-	'Département' : L.tileLayer('https://data.geopf.fr/wfs/ows?VERSION=2.0.0', {typename='LIMITES_ADMINISTRATIVES_EXPRESS.LATEST:departement'}),
 	// OpenTopoMap : L.tileLayer("http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"),
 };
 
